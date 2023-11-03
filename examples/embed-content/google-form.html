@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Invite</title>
+    <style>
+    body {
+        background-color: slategray;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .row {
+        /* 1:1 Aspect Ratio */
+        position: relative;
+        width: 100%;
+        /* overflow needed to hide browser horizontal scrollbar */
+        overflow: hidden;
+        padding-top: 100%;
+    }
+
+    .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        /* larger width than container hides iframe scrollbar */
+        width: 105%;
+        height: 100%;
+        border: none;
+    }
+    </style>
+</head>
+
+<body>
+    <h2>Responsive Google Form</h2>
+    <div class="container">
+        <div class="row">
+            <iframe class="responsive-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLSfMViRv4PRxHxnvVg3ryxZwX0c-_E9S2qRRBKk79H9l2M4CtQ/viewform?embedded=true">Loading…</iframe>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive YouTube Video</title>
+</head>
+
+<body>
+	<h1>Responsive YouTube iframes</h1>
+	<p><a href="https://www.youtube.com/watch?v=4c072nihyTc" target="_blank">Video</a> for this example</p>
+    <p>When you embed a video, YouTube specifies the width to be 560 pixels wide and 315 pixels tall. This is a 16:9 ratio, which is a typical screen dimension for modern TVs, phone and tablet screens, YouTube videos, projectors, computer monitors, etc. For every 16 pixels or inches wide, the screen has 9 tall. This means the height is 56.25% of the width.</p>
+    <h2>Fixed Width at 16:9</h2>
+
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/4c072nihyTc?si=BV1hwMlFCyuXAYYv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <h2>100% Width of Screen</h2>
+
+    <div style="width: 100%">
+        <div style="position: relative; width: 100%; overflow: hidden; padding-top: 56.25%;">
+            <iframe style="position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/4c072nihyTc?si=BV1hwMlFCyuXAYYv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <h2>Responsive and Maintain 16:9 Aspect Ratio</h2>
+    <div style="width: 100%; min-width: 400px; max-width: 800px;">
+        <div style="position: relative; width: 100%; overflow: hidden; padding-top: 56.25%;">
+            <iframe style="position: absolute; top: 0; left: 0; right: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/4c072nihyTc?si=BV1hwMlFCyuXAYYv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+    <p>The final bit is code is extremely important: padding-top: 56.25%.  What we are saying here is that regardless the width, we want there to be 56.25% height.  100:56.25 is the same ratio as 16:9.  So we are clarifying that for every 16 pixels of width, we want the div to be 9 pixels tall.  If I were to embed a video that for some reason was a 1:1 ratio (like an instagram video), then I would set the height to 100% instead of 56.25%.  That means the height would be 100% of the width.  If the video were 4:3, like the old videos up through the 90’s when we had squarish TVs, then I would specify the height to be 75%, because 3 is 75% of 4.  I would equate 3/4 = .75, and .75*100 is 75.  For the vast majority of YouTube videos that you will embed, you’ll want to use 56.25% and you’ll be set.</p>
+    <h4>References</h4>
+    <ul>
+    	<li><a href="https://www.howtocanvas.com/create-amazing-pages-in-canvas/responsive-youtube-iframes" target="_blank">Responsive YouTube iframes article</a></li>
+    </ul>
+</body>
+
+</html>
